@@ -2,7 +2,7 @@ import { Search, ShoppingBag, User } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-10 py-6 border-b border-zinc-800 bg-black text-white">
+    <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10 py-6 bg-black/70 backdrop-blur-md text-white">
 
       <h1 className="text-3xl font-black tracking-[8px] text-orange-500">
         ALPHA WEAR
