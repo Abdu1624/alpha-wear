@@ -60,7 +60,7 @@ export default function Navbar() {
           />
 
           {/* Cart */}
-          <div className="relative cursor-pointer">
+          <Link href="/cart" className="relative">
             <ShoppingBag
               size={24}
               className="hover:text-orange-500 transition"
@@ -71,9 +71,10 @@ export default function Navbar() {
                 {totalItems}
               </span>
             )}
-          </div>
+          </Link>
 
         </div>
+
       </div>
     </nav>
   );
