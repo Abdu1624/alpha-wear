@@ -1,109 +1,60 @@
 import Image from "next/image";
-import { Heart, ShoppingBag, Star } from "lucide-react";
-
-const products = [
-  {
-    name: "Black Oversized Tee",
-    price: "Rs. 2,999",
-    image: "/images/tshirt1.jpg",
-    badge: "NEW",
-  },
-  {
-    name: "White Oversized Tee",
-    price: "Rs. 2,799",
-    image: "/images/tshirt2.jpg",
-    badge: "BEST SELLER",
-  },
-  {
-    name: "Performance Hoodie",
-    price: "Rs. 4,999",
-    image: "/images/hoodie.jpg",
-    badge: "LIMITED",
-  },
-  {
-    name: "Compression Tee",
-    price: "Rs. 3,199",
-    image: "/images/compression.jpg",
-    badge: "HOT",
-  },
-];
+import Link from "next/link";
+import { products } from "@/components/data/products";
 
 export default function FeaturedProducts() {
   return (
-    <section className="bg-black py-24 px-6">
+    <section className="bg-black text-white py-20 px-8">
       <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-black text-center mb-4">
+          Featured Collection
+        </h2>
 
-        <div className="text-center mb-16">
-          <p className="uppercase tracking-[8px] text-orange-500">
-            Premium Collection
-          </p>
+        <p className="text-center text-zinc-400 mb-14">
+          Discover our premium streetwear collection.
+        </p>
 
-          <h2 className="text-5xl font-black text-white mt-4">
-            Featured Products
-          </h2>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
-            <div
-              key={product.name}
-              className="group rounded-3xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-orange-500 transition-all duration-500"
+            <Link
+              key={product.id}
+              href={`/products/${product.slug}`}
+              className="group bg-zinc-900 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500"
             >
-              <div className="relative overflow-hidden">
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={500}
+                height={600}
+                className="w-full h-105 object-cover object-center group-hover:scale-105 transition duration-500"
+              />
 
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={600}
-                  height={800}
-                  className="w-full h-105 object-cover transition duration-700 group-hover:scale-110"
-                />
+              <div className="p-5">
+                <p className="text-sm uppercase text-orange-500">
+                  {product.category}
+                </p>
 
-                <span className="absolute top-5 left-5 bg-orange-500 px-3 py-1 rounded-full text-xs font-bold">
-                  {product.badge}
-                </span>
-
-                <button className="absolute top-5 right-5 bg-black/60 p-2 rounded-full hover:bg-orange-500 transition">
-                  <Heart size={18} />
-                </button>
-
-              </div>
-
-              <div className="p-6">
-
-                <div className="flex items-center gap-1 text-orange-500">
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                </div>
-
-                <h3 className="text-xl font-bold text-white mt-3">
+                <h3 className="text-xl font-bold mt-2">
                   {product.name}
                 </h3>
 
-                <p className="text-orange-500 mt-2 font-semibold">
-                  {product.price}
+                <p className="text-zinc-400 mt-3 line-clamp-2">
+                  {product.description}
                 </p>
 
-                <div className="flex gap-2 mt-4">
-                  <span className="border px-3 py-1 rounded-full text-sm">S</span>
-                  <span className="border px-3 py-1 rounded-full text-sm">M</span>
-                  <span className="border px-3 py-1 rounded-full text-sm">L</span>
-                  <span className="border px-3 py-1 rounded-full text-sm">XL</span>
+                <div className="flex items-center justify-between mt-6">
+                  <span className="text-2xl font-bold text-orange-500">
+                    Rs. {product.price}
+                  </span>
+
+                  <button className="bg-orange-500 px-4 py-2 rounded-lg hover:bg-orange-600 transition">
+                    View
+                  </button>
                 </div>
-
-                <button className="mt-6 flex items-center justify-center gap-2 w-full bg-orange-500 hover:bg-orange-600 py-3 rounded-xl font-semibold transition">
-                  <ShoppingBag size={18} />
-                  Add to Cart
-                </button>
-
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-
       </div>
     </section>
   );
