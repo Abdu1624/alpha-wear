@@ -4,6 +4,8 @@ import Categories from "@/components/Categories";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <FeaturedProducts />
       <WhyChooseUs />
       <Testimonials />
+      <Newsletter />
+      <Footer />
     </>
   );
 }

@@ -56,7 +56,7 @@ export default function FeaturedProducts() {
                   alt={product.name}
                   width={600}
                   height={800}
-                  className="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110"
+                  className="w-full h-105 object-cover transition duration-700 group-hover:scale-110"
                 />
 
                 <span className="absolute top-5 left-5 bg-orange-500 px-3 py-1 rounded-full text-xs font-bold">
