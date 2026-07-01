@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { products } from "@/components/data/products";
+import { products } from "../../../components/data/products";
+import AddToCartButton from "../../../components/AddToCartButton";
 
 type PageProps = {
   params: Promise<{
@@ -20,7 +21,6 @@ export default async function ProductPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="max-w-7xl mx-auto px-8 py-20">
-
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Product Image */}
@@ -36,7 +36,6 @@ export default async function ProductPage({ params }: PageProps) {
 
           {/* Product Details */}
           <div>
-
             <p className="uppercase tracking-[6px] text-orange-500">
               {product.category}
             </p>
@@ -76,15 +75,11 @@ export default async function ProductPage({ params }: PageProps) {
 
             {/* Buttons */}
             <div className="mt-12 flex gap-5">
-
-              <button className="flex-1 bg-orange-500 hover:bg-orange-600 py-4 rounded-xl font-bold transition">
-                Add To Cart
-              </button>
+              <AddToCartButton product={product} />
 
               <button className="flex-1 border border-white hover:bg-white hover:text-black py-4 rounded-xl transition">
                 Buy Now
               </button>
-
             </div>
 
             {/* Features */}
@@ -94,11 +89,9 @@ export default async function ProductPage({ params }: PageProps) {
               <p>✔ 7 Days Easy Returns</p>
               <p>✔ Secure Checkout</p>
             </div>
-
           </div>
 
         </div>
-
       </div>
     </main>
   );
