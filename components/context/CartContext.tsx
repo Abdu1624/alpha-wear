@@ -8,6 +8,7 @@ import {
   useEffect,
 } from "react";
 import { Product } from "@/types/product";
+import toast from "react-hot-toast";
 
 interface CartItem extends Product {
   quantity: number;
@@ -36,13 +37,12 @@ export function CartProvider({
       return [];
     }
 
-    const savedCart = window.localStorage.getItem("alpha-cart");
+    const savedCart = localStorage.getItem("alpha-cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // Save cart
   useEffect(() => {
-    window.localStorage.setItem("alpha-cart", JSON.stringify(cart));
+    localStorage.setItem("alpha-cart", JSON.stringify(cart));
   }, [cart]);
 
   function addToCart(product: Product) {
@@ -100,10 +100,18 @@ export function CartProvider({
 
   function removeFromCart(id: number) {
     setCart((prev) => prev.filter((item) => item.id !== id));
+
+    toast("Item removed from cart", {
+      icon: "🗑️",
+    });
   }
 
   function clearCart() {
     setCart([]);
+
+    toast("Cart cleared", {
+      icon: "🧹",
+    });
   }
 
   const totalItems = cart.reduce(

@@ -9,6 +9,8 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useCart } from "@/components/context/CartContext";
+import CouponBox from "@/components/CouponBox";
+import OrderSummary from "@/components/OrderSummary";
 
 export default function CartPage() {
   const {
@@ -141,35 +143,51 @@ export default function CartPage() {
 
         </div>
 
-        <div className="mt-16 border-t border-zinc-800 pt-10 flex flex-col md:flex-row justify-between items-center">
+        <div className="grid lg:grid-cols-3 gap-10 mt-16">
 
-          <div>
+          <div className="lg:col-span-2 space-y-8">
 
-            <h2 className="text-4xl font-black">
-              Total
-            </h2>
-
-            <p className="text-5xl font-black text-orange-500 mt-3">
-              Rs. {totalPrice}
-            </p>
-
-          </div>
-
-          <div className="flex gap-5 mt-8 md:mt-0">
+            <CouponBox />
 
             <Link
               href="/"
-              className="flex items-center gap-2 border border-white px-6 py-4 rounded-xl hover:bg-white hover:text-black transition"
+              className="inline-flex items-center gap-2 border border-white px-6 py-4 rounded-xl hover:bg-white hover:text-black transition"
             >
               <ArrowLeft size={20} />
               Continue Shopping
             </Link>
 
-            <button className="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-bold transition">
-              Proceed to Checkout
-            </button>
-
           </div>
+
+          <OrderSummary subtotal={totalPrice} />
+
+        </div>
+
+        <div>
+
+          <h2 className="text-4xl font-black">
+            Total
+          </h2>
+
+          <p className="text-5xl font-black text-orange-500 mt-3">
+            Rs. {totalPrice}
+          </p>
+
+        </div>
+
+        <div className="flex gap-5 mt-8 md:mt-0">
+
+          <Link
+            href="/"
+            className="flex items-center gap-2 border border-white px-6 py-4 rounded-xl hover:bg-white hover:text-black transition"
+          >
+            <ArrowLeft size={20} />
+            Continue Shopping
+          </Link>
+
+          <button className="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-bold transition">
+            Proceed to Checkout
+          </button>
 
         </div>
 

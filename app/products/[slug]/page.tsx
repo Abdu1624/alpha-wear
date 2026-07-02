@@ -26,16 +26,16 @@ export default async function ProductPage({ params }: PageProps) {
           {/* Product Image */}
           <div>
             <Image
-              src={product.image}
-              alt={product.name}
+              src={product!.image}
+              alt={product!.name}
               width={700}
               height={850}
-              className="rounded-3xl w-full h-[700px] object-cover"
+              className="rounded-3xl w-full h-175 object-cover"
             />
           </div>
 
           {/* Product Details */}
-          <ProductInfo product={product} />
+          <ProductInfo product={product!} />
 
         </div>
       </div>

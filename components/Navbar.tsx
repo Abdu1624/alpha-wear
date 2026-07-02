@@ -27,7 +27,7 @@ export default function Navbar() {
             className="relative group hover:text-orange-500 transition"
           >
             Home
-            <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
           <Link
@@ -35,7 +35,7 @@ export default function Navbar() {
             className="relative group hover:text-orange-500 transition"
           >
             Shop
-            <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
           <Link
@@ -43,7 +43,7 @@ export default function Navbar() {
             className="relative group hover:text-orange-500 transition"
           >
             Collections
-            <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
           <Link
@@ -51,7 +51,7 @@ export default function Navbar() {
             className="relative group hover:text-orange-500 transition"
           >
             About
-            <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
           <Link
@@ -59,7 +59,7 @@ export default function Navbar() {
             className="relative group hover:text-orange-500 transition"
           >
             Contact
-            <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
         </div>
