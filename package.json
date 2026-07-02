@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "workspaces": [
+    "alpha-wear"
+  ],
+  "scripts": {
+    "dev": "npm --workspace alpha-wear run dev",
+    "build": "npm --workspace alpha-wear run build",
+    "start": "npm --workspace alpha-wear run start",
+    "lint": "npm --workspace alpha-wear run lint"
+  }
+}
